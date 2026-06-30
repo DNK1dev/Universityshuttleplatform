@@ -1,7 +1,7 @@
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
  
     // Backend Node.js API Base URL Configuration
-    const API_BASE_URL = 'http://localhost:5000/api';
+    const API_BASE_URL = 'https://universityshuttleplatform-1.onrender.com/api';
 
     // BACKEND ROUTE GUARD: Check validation tags upon immediate page startup instantiation
     const activeSessionToken = localStorage.getItem('shuttle_user_token');
@@ -197,3 +197,4 @@
         }, 3000);
     }
 });
+
