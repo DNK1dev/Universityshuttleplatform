@@ -144,9 +144,8 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-/* ==========================================================================
-   5. START SERVER (fixed: no shadowed PORT, logs confirmation)
-   ========================================================================== */
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
