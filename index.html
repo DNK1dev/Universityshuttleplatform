@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Shuttle Tracking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spa-body">
+
+    <!-- LAYER 1: AUTHENTICATION INTERFACE VIEW -->
+    <div id="authSection" class="view-panel">
+        <div class="login-container">
+            
+            <!-- SUB-PANEL A: SIGN IN INTERFACE -->
+            <div id="loginView">
+                <div class="login-header">
+                    <div class="login-logo">🚌</div>
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to access the Shuttle Tracking Dashboard</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div id="errorMessage" class="error-msg" style="display: none;"></div>
+
+                    <div class="form-group">
+                        <label for="username">University ID / Email</label>
+                        <input type="text" id="username" placeholder="e.g., student123@uni.edu" required autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-wrapper">
+                            <label for="password">Password</label>
+                            <a href="#" class="form-link">Forgot?</a>
+                        </div>
+                        <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+
+                <div class="auth-toggle-footer">
+                    <p>Don't have an account? <a href="#" id="linkToRegister" class="form-link font-bold">Create Account</a></p>
+                </div>
+            </div>
+
+            <!-- SUB-PANEL B: REGISTRATION / CREATE ACCOUNT INTERFACE -->
+            <div id="registerView" class="view-hidden">
+                <div class="login-header">
+                    <div class="login-logo">📝</div>
+                    <h2>Create Account</h2>
+                    <p>Register your student profile for live route access</p>
+                </div>
+
+                <form class="login-form" id="registerForm">
+                    <div id="registerSuccessMessage" class="success-msg" style="display: none;"></div>
+                    <div id="registerErrorMessage" class="error-msg" style="display: none;"></div>
+
+                    <div class="form-group">
+                        <label for="regFullName">Full Name</label>
+                        <input type="text" id="regFullName" placeholder="John Doe" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">University Email</label>
+                        <input type="email" id="regEmail" placeholder="student@uni.edu" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="Minimum 6 characters" required autocomplete="new-password">
+                    </div>
+
+                     <div class="form-group">
+                         <label for="regConfirmPassword">Confirm Password</label>
+                          <input type="password" id="regConfirmPassword" placeholder="Re-enter password" required autocomplete="new-password"></div>
+
+                    <button type="submit" class="btn-submit">Sign Up</button>
+                </form>
+
+                <div class="auth-toggle-footer">
+                    <p>Already have an account? <a href="#" id="linkToLogin" class="form-link font-bold">Sign In here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LAYER 2: SYSTEM TRACKING DASHBOARD VIEW -->
+    <div id="dashboardSection" class="view-panel view-hidden">
+        <header>
+            <h1>University Shuttle Tracking System</h1>
+            <p>Real-Time GPS Tracking & Arrival Prediction</p>
+        </header>
+
+        <div class="container">
+            <div class="dashboard">
+                <div class="card">
+                    <h3>BUS-01</h3>
+                    <p>Current Stop: Main Gate</p>
+                    <p>Next Stop: Science Block</p>
+                    <p id="eta1">ETA: 4 Minutes</p>
+                </div>
+
+                <div class="card">
+                    <h3>BUS-02</h3>
+                    <p>Current Stop: Library</p>
+                    <p>Next Stop: Hostel</p>
+                    <p id="eta2">ETA: 6 Minutes</p>
+                </div>
+
+                <div class="card">
+                    <h3>System Status</h3>
+                    <p class="status">All Shuttles Active</p>
+                    <p style="margin-bottom: 1rem;">3 Shuttles Online</p>
+                    <button type="button" id="btnLogout" class="btn-logout">Sign Out</button>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="map-header">Live Shuttle Location Map</div>
+                <iframe id="map" src="https://google.com"></iframe>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shuttle</th>
+                        <th>Current Stop</th>
+                        <th>Next Stop</th>
+                        <th>Estimated Arrival</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BUS-01</td>
+                        <td>Main Gate</td>
+                        <td>Science Block</td>
+                        <td id="tableEta1">4 mins</td>
+                        <td class="status">On Route</td>
+                    </tr>
+                    <tr>
+                        <td>BUS-02</td>
+                        <td>Library</td>
+                        <td>Hostel</td>
+                        <td id="tableEta2">6 mins</td>
+                        <td class="status">On Route</td>
+                    </tr>
+                    <tr>
+                        <td>BUS-03</td>
+                        <td>Faculty Building</td>
+                        <td>Main Gate</td>
+                        <td>3 mins</td>
+                        <td class="status">On Route</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            © 2026 University Shuttle GPS Tracking System
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
