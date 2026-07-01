@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
  
     // Backend Node.js API Base URL Configuration
     const API_BASE_URL = 'https://universityshuttleplatform-1.onrender.com/api';
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateLiveMapLocation(latitude, longitude) {
     const mapFrame = document.getElementById('map');
     if (mapFrame) {
-        mapFrame.src = `https://google.com{latitude},${longitude}&z=15&output=embed`;
+        mapFrame.src = `https://maps.google.com/maps?q=${latitude},${longitude}&z=15&output=embed`;
     }
 }
 
@@ -197,4 +197,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 });
-
