@@ -1,4 +1,4 @@
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
  
     // Backend Node.js API Base URL Configuration
     const API_BASE_URL = 'https://universityshuttleplatform-1.onrender.com/api';
